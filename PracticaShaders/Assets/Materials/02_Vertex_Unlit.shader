@@ -40,28 +40,28 @@ Shader"ENTI/02_Vertex_Unlit"
                 float4 dispTex : TEXCOORD1;
             };
 
-sampler2D _MainTex, _DispTex;
-float4 _MainTex_ST;
-float4 _DispTex_ST;
-float _Scale;
-float4 _TilingOffset;
-fixed4 _Color;
-float _Displacement;
+            sampler2D _MainTex, _DispTex;
+            float4 _MainTex_ST;
+            float4 _DispTex_ST;
+            float _Scale;
+            float4 _TilingOffset;
+            fixed4 _Color;
+            float _Displacement;
 
             v2f vert(appdata v)
             {
                 v2f o;
     
-    float2 local_uv = v.uv;
-    local_uv *= _TilingOffset.xy;
-    local_uv += _TilingOffset.zw;
+                float2 local_uv = v.uv;
+                local_uv *= _TilingOffset.xy;
+                local_uv += _TilingOffset.zw;
     
                 o.uv = TRANSFORM_TEX(local_uv.xy, _MainTex);
     
                 v.vertex *= _Scale;
     
-    float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-    half4 displacetex = tex2Dlod(_DispTex, float4(worldPos.x * _Time.x, worldPos.y,0,0));
+                float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                half4 displacetex = tex2Dlod(_DispTex, float4(worldPos.x * _Time.x, worldPos.y,0,0));
     
                 v.vertex.xyz += _Displacement * v.normal * displacetex;
     

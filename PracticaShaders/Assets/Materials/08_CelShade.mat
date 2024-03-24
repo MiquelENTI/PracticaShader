@@ -9,8 +9,6 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 08_CelShade
   m_Shader: {fileID: 4800000, guid: c9081ac44885b4b4e81e46c1261b0f9e, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -19,7 +17,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -93,8 +90,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmbientIntensity: 1
-    - _Attenuation: 1
+    - _AmbientIntensity: 1.05
+    - _Attenuation: 0.84
     - _Blend: 0.507
     - _BumpScale: 1
     - _CelThreshold: 0.672
@@ -120,7 +117,7 @@ Material:
     - _PulsePower: 1
     - _RevealValue: 0
     - _Scale: 1
-    - _ShadowIntensity: 0.092
+    - _ShadowIntensity: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecIntensity: 1
     - _SpecPow: 1
