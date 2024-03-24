@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 06_Dissolve
-  m_Shader: {fileID: 4800000, guid: cf83935b85de54540939ebd7585b4f3d, type: 3}
+  m_Name: 02_RadarTerrainShader
+  m_Shader: {fileID: 4800000, guid: 84f8dd0302c6bd0489ec34272cac39ef, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,10 +20,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BlendTex:
-        m_Texture: {fileID: 2800000, guid: 93b0e82a15c80a54a87f1b2272cc47d0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,11 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cb7911d313e8b274c8c3f7f3f38cbd6b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: a099baccc653c3a4bb321272d9272ddd, type: 3}
+        m_Texture: {fileID: 2800000, guid: dfe49a2353260da4e9bdfbce7e6a9448, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,56 +68,38 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Tex1:
-        m_Texture: {fileID: 2800000, guid: aabc8a29d54253942ba9e7b2d0002465, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Tex2:
-        m_Texture: {fileID: 2800000, guid: 8c42c8c8ed2b68c47b89d5dbcaf4241a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Tex3:
-        m_Texture: {fileID: 2800000, guid: 225f0f6793373ab4794a4495b1f420ff, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blend: 0.507
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _Displacement: 1
     - _DstBlend: 0
-    - _DstFactor: 1
-    - _Feather: 0.5
     - _FlowAmount: 1
     - _FlowSpeed: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxHeight: 22.33
+    - _MaxHeight: 20.93
     - _Metallic: 0
     - _Mode: 0
     - _MoveSpeed: 0.01
     - _OcclusionStrength: 1
-    - _Opp: 0
     - _Parallax: 0.02
-    - _Power: 2
+    - _PositionX: 8.67
+    - _PositionY: 2.07
     - _PulsePower: 1
-    - _RevealValue: 1
     - _Scale: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SrcFactor: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.18643188, b: 1, a: 1}
-    - _Color1: {r: 0.020469915, g: 0.101072885, b: 0.8679245, a: 1}
-    - _Color2: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.8709866, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flow1: {r: 1, g: 0, b: 0, a: 0}
     - _Flow2: {r: 0.5, g: -0.5, b: 0, a: 0}
+    - _Position: {r: -1.62, g: 0.44, b: -0.27, a: 1}
     - _TilingOffset: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
