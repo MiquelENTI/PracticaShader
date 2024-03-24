@@ -26,6 +26,10 @@ _CelThreshold("Celshade Threshold", Range(0,1)) = 1.0
 _ShadowColor("Shadow Color", Color) = (1,1,1,1)
 _ShadowIntensity("Shadow Intensity", Range(0,1)) = 1.0
 
+[Space(1)]
+[Header(Outline)]
+_OutlineWidth("Outline Width", Range(0,0.1)) = 0.05
+
     }
     SubShader
     {
@@ -55,8 +59,8 @@ _ShadowIntensity("Shadow Intensity", Range(0,1)) = 1.0
                 float4 color : COLOR;
             };
 
-fixed4 _Color, _SpecColor, _ShadowColor;
-float _Attenuation, _AmbientIntensity, _SpecPow, _SpecIntensity, _CelThreshold, _ShadowIntensity;
+            fixed4 _Color, _SpecColor, _ShadowColor;
+            float _Attenuation, _AmbientIntensity, _SpecPow, _SpecIntensity, _CelThreshold, _ShadowIntensity;
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
@@ -89,10 +93,10 @@ float _Attenuation, _AmbientIntensity, _SpecPow, _SpecIntensity, _CelThreshold, 
                 float3 diffuseReflection = dot(i.normal, lightDirection);
                 diffuseReflection = max(0.0, diffuseReflection) * _Attenuation;
     
-    //celshade
-    fixed light = step(_CelThreshold, diffuseReflection);
-    light = lerp(_ShadowIntensity, fixed(1), light);
-    fixed3 lightCol = lerp(_ShadowColor.rgb, _LightColor0.rgb, light);
+                //celshade
+                fixed light = step(_CelThreshold, diffuseReflection);
+                light = lerp(_ShadowIntensity, fixed(1), light);
+                fixed3 lightCol = lerp(_ShadowColor.rgb, _LightColor0.rgb, light);
     
                             //specular reflection
                 float3 x = reflect(-lightDirection, i.normal);
@@ -108,7 +112,7 @@ float _Attenuation, _AmbientIntensity, _SpecPow, _SpecIntensity, _CelThreshold, 
     
     
                 //float3 lightFinal = diffuseReflection * _LightColor0.rgb;
-    float3 lightFinal = lightCol;
+                float3 lightFinal = lightCol;
     
                             //lightFinal += UNITY_LIGHTMODEL_AMBIENT.rgb;
                             //lightFinal += _Color.rgb;
@@ -119,6 +123,48 @@ float _Attenuation, _AmbientIntensity, _SpecPow, _SpecIntensity, _CelThreshold, 
     
                 return i.color;
             }
+            ENDCG
+        }
+
+        Pass
+        {
+            Cull Front
+
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include "UnityCG.cginc"
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+            };
+
+            struct v2f
+            {
+                float4 vertex : SV_POSITION;
+            };
+
+            fixed4 _Color;
+            float _OutlineWidth;
+
+            v2f vert(appdata v)
+            {
+                v2f o;
+
+                v.vertex.xyz += _OutlineWidth * v.normal;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+
+                return o;
+            }
+
+            fixed4 frag(v2f i) : SV_Target
+            {
+                return _Color;
+            }
+
             ENDCG
         }
     }

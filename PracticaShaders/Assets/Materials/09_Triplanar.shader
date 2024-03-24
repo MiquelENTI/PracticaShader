@@ -57,29 +57,29 @@ float _Sharpness;
                 float2 uv_front = TRANSFORM_TEX(i.worldPos.yz, _MainTex);
                 float2 uv_top = TRANSFORM_TEX(i.worldPos.xz, _SecondaryTex);
                 float2 uv_side = TRANSFORM_TEX(i.worldPos.xy, _MainTex);
-    
-    
+
+
                 fixed4 col_front = tex2D(_MainTex, uv_front);
                 fixed4 col_top = tex2D(_SecondaryTex, uv_top);
                 fixed4 col_side = tex2D(_MainTex, uv_side);
-    
+
                 float3 weight = i.normal;
                 weight = abs(weight);
-    
-                if(i.normal.y < 0.0)
+
+                if (i.normal.y < 0.0)
                 {
                     uv_top = TRANSFORM_TEX(i.worldPos.xz, _MainTex);
                     col_top = tex2D(_MainTex, uv_top);
                 }
 
-   
+
                 weight = pow(weight, _Sharpness);
                 weight = weight / (weight.x + weight.y + weight.z);
-    
+
                 col_front *= weight.x;
                 col_top *= weight.y;
                 col_side *= weight.z;
-    
+
                 fixed4 col = col_front + col_top + col_side;
     
                 return col;

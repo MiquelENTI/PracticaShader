@@ -33,13 +33,13 @@ Shader"ENTI/03_TerrainShader"
                 float2 uv : TEXCOORD0;
             };
 
-                                                                                                                                sampler2D _MainTex;
-                                                                                                    float4 _MainTex_ST;
-                                                                        sampler2D _Heatmap;
-                                            float4 _Heatmap_ST;
+                sampler2D _MainTex;
+                float4 _MainTex_ST;
+                sampler2D _Heatmap;
+                float4 _Heatmap_ST;
 
-                        fixed4 _Color;
-float _MaxHeight;
+                fixed4 _Color;
+                float _MaxHeight;
 
 
             v2f vert(appdata v)
