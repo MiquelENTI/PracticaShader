@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: bfcf4c30c90d68341a8cf1ff18bd6032, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlendTex:
@@ -69,7 +69,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetalnessMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a8161561db289db44954f0b1ae6fbc9c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
@@ -77,11 +77,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: c51c6c5b3b56054418b3ff2a590a0691, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76296c03be35f6449b1720761d110462, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: c51c6c5b3b56054418b3ff2a590a0691, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76296c03be35f6449b1720761d110462, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -89,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 76296c03be35f6449b1720761d110462, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondaryTex:
@@ -139,18 +139,18 @@ Material:
     - _GlossyReflections: 1
     - _MaxHeight: 22.33
     - _Metallic: 0
-    - _Metalness: 0
+    - _Metalness: 1
     - _Mode: 0
     - _MoveSpeed: 0.01
-    - _NormalStrength: 1
-    - _Occlusion: 1
+    - _NormalStrength: 0
+    - _Occlusion: 0
     - _OcclusionStrength: 1
     - _Opp: 0
     - _Parallax: 0.02
     - _Power: 2
     - _PulsePower: 1
     - _RevealValue: 0
-    - _Roughness: 1
+    - _Roughness: 0
     - _Scale: 1
     - _ShadowIntensity: 0.092
     - _ShadowStrength: 0.8

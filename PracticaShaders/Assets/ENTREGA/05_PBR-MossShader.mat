@@ -129,7 +129,7 @@ Material:
     - _Displacement: 1
     - _DstBlend: 0
     - _DstFactor: 1
-    - _Exposure: 2.62
+    - _Exposure: 2.2
     - _Feather: 0.5
     - _FlowAmount: 1
     - _FlowSpeed: 1
@@ -150,7 +150,7 @@ Material:
     - _Power: 2
     - _PulsePower: 1
     - _RevealValue: 0
-    - _Roughness: 0
+    - _Roughness: 1
     - _Scale: 1
     - _ShadowIntensity: 0.092
     - _ShadowStrength: 1
